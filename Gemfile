@@ -26,7 +26,7 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use unicorn as the app server
+
 gem 'unicorn'
 
 # Use Capistrano for deployment
@@ -36,9 +36,30 @@ gem 'unicorn'
 # gem 'debugger', group: [:development, :test]
 
 #front end dependencies
+group :development, :test do
+  gem 'rspec-rails', ' ~> 3.0.1'
+
+end
+gem 'guard-rspec', require: false, group: :development
+
+group :test do
+  gem 'simplecov', :require => false
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+end
+gem 'simple_form'
+gem 'byebug'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-github'
+gem 'omniauth-linkedin'
 
 gem 'bourbon'
 gem 'neat', '~> 1.6.0'
 gem 'bitters'
 gem "rails-backbone"
 gem 'guard-livereload'
+
+gem 'rails_12factor', group: :production
