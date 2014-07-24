@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="4034676769">
+    <data-source source="LOCAL" name="Rails theironbook: development" uuid="0cf1c73a-b478-4d9e-8d28-7d37753aec2f">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:theironbook_development</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails theironbook: test" uuid="476c013a-feb6-4826-b248-f08197e385b6">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:theironbook_test</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails theironbook: production" uuid="d9c3504a-e074-43cf-a4a1-50db8704e403">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:theironbook_production</jdbc-url>
+      <user-name>theironbook</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddffedfe2dfefdfe3dff8dfe5dfe4dfe8dfe5dfe5dfe1dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
