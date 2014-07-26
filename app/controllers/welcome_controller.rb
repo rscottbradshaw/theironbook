@@ -1,7 +1,5 @@
 class WelcomeController < ApplicationController
-  respond_to :json
-  def index
-    @users = User.all
-    respond_with @users
+  respond_to :html
+    def index
   end
 end
