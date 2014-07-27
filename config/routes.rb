@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'authentications/index'
-
-  get 'authentications/all'
-
-  get 'authentications/destroy'
-
+  devise_scope :user do
+    resources :authentications
+  end
   get 'welcome/index'
 
-  devise_for :users
+  devise_for :users, controllers: {omniauth_callbacks: 'authentications'}
 
   root 'welcome#index'
 

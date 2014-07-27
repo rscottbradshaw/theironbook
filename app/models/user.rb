@@ -2,8 +2,9 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :authentications
+  has_one :info
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:twitter]
 
   before_save :ensure_authentication_token
 
@@ -12,6 +13,7 @@ class User < ActiveRecord::Base
       self.authentication_token = generate_authentication_token
     end
   end
+
   def apply_omniauth(omniauth)
     authentications.build(:provider => omniauth['provider'],:uid => omniauth['uid'],
                           :oauth_token => omniauth['credentials']['token'],

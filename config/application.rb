@@ -26,7 +26,13 @@ module Theironbook
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    config.assets.initialize_on_precompile = false
 
+    #added this to make sure the api would keep the session to use omniauth
+    config.assets.initialize_on_precompile = false
+    # config.middleware.use config.session_store, config.session_options
+    # config.middleware.use Rack::MethodOverride
+    # config.middleware.use ActionDispatch::Cookies
+    # config.middleware.use ActionDispatch::Session::CookieStore
+    # config.middleware.use ActionDispatch::Flash
   end
 end

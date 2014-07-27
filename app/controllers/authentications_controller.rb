@@ -1,11 +1,12 @@
-class AuthenticationsController < ApplicationController
-
+class AuthenticationsController < Devise::OmniauthCallbacksController
+  respond_to :json
   def index
     @authentications = current_user.authentications if current_user
+    render :json =>  @authentications
   end
 
   def all
-    omniauth = request.env['omniauth.auth']
+    omniauth = request.env['omniauth.auth']['credentials']
     auth = Authentication.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
 
     if auth
@@ -39,5 +40,11 @@ class AuthenticationsController < ApplicationController
   alias_method :twitter, :all
 
   def destroy
+    @authentication = current_user.authentications.find(params[:id])
+    @authentication.destroy
+    respond_to do |format|
+      format.html { redirect_to authentications_url, notice: 'Authentication was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 end
