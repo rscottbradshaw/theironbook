@@ -39,6 +39,7 @@ class AuthenticationsController < Devise::OmniauthCallbacksController
   end
   alias_method :twitter, :all
 
+
   def destroy
     @authentication = current_user.authentications.find(params[:id])
     @authentication.destroy

@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'info/create'
+
+  get 'info/show'
+
+  get 'info/destroy'
+
   devise_scope :user do
-    resources :authentications
+    resources :authentications, defaults: {format: :json}
+
   end
   get 'welcome/index'
 
