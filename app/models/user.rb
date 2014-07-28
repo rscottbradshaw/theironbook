@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
   has_many :authentications
   has_one :info
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:twitter]
+         :recoverable, :rememberable, :trackable, :validatable,
+         :omniauthable, :omniauth_providers => [:twitter]
 
   before_save :ensure_authentication_token
 
