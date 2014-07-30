@@ -4,7 +4,7 @@ class CreateStudents < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.integer :year
-      t.string :class
+      t.string :cohort
       t.string :imgUrl
 
       t.timestamps

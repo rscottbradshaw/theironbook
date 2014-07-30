@@ -6,7 +6,11 @@ RSpec.describe "students/new", :type => :view do
       :name => "MyString",
       :description => "MyText",
       :year => 1,
+<<<<<<< HEAD
       :class => "MyString",
+=======
+      :cohort => "MyString",
+>>>>>>> i think its fixed
       :imgUrl => "MyString"
     ))
   end
@@ -22,7 +26,11 @@ RSpec.describe "students/new", :type => :view do
 
       assert_select "input#student_year[name=?]", "student[year]"
 
+<<<<<<< HEAD
       assert_select "input#student_class[name=?]", "student[class]"
+=======
+      assert_select "input#student_cohort[name=?]", "student[cohort]"
+>>>>>>> i think its fixed
 
       assert_select "input#student_imgUrl[name=?]", "student[imgUrl]"
     end

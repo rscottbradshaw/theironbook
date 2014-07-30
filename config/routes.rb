@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :students, defaults: {format: :json}
 
-  devise_scope :user do
-    resources :authentications, defaults: {format: :json}
-
-  end
+  resources :students
 
 
   devise_for :users, controllers: {omniauth_callbacks: 'authentications'}
